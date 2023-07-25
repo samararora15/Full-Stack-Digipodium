@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Using CSS</title>
 
+    <link rel="stylesheet" href="style.css">
+
     <style>
         p{
             color: tomato;
@@ -12,16 +14,22 @@
         }
 
         .myclass{
-            text-align: center;
+            text-align: left;
             font-size: 20px;
             text-decoration: underline;
         }
 
+        .myclass2{
+            text-align: right;
+        }
+
+        /* myclass2 has higher priority as it is defined later */
         /* class selector has higher priority than name selector */
+        /* Inline selector has  highest priority */
 
         #myid{
             font-size: 60px;
-            background-color: blue;
+            background-color: blue !important;
         }
 
     </style>
@@ -36,9 +44,11 @@
 
     <p class="myclass">Name Selectors are used to select elements by their tag name</p>
 
-    <h3 class="myclass">Class selectors are used to select elements by their class Name .</h3>
+    <h3 class="myclass2 myclass">Class selectors are used to select elements by their class Name .</h3>
 
     <p id="myid">ID selector are used to select unique elements by their id name    #</p>
+
+    <p class="external"> External CSS is used to apply CSS on multiple pages at once</p>
 
 </body>
 </html>
