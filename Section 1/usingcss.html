@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using CSS</title>
+
+    <style>
+        p{
+            color: tomato;
+            font-size: 20px;
+        }
+
+        .myclass{
+            text-align: center;
+            font-size: 20px;
+            text-decoration: underline;
+        }
+
+        /* class selector has higher priority than name selector */
+
+        #myid{
+            font-size: 60px;
+            background-color: blue;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <h2 style="color: blueviolet; font-size: 50px;">Inline CSS is used to style individual elements</h2>
+    <!-- semicolon is used to apply multiple css tags -->
+
+    <p>Internal CSS is used to apply CSS on entire page at once</p>
+
+    <p class="myclass">Name Selectors are used to select elements by their tag name</p>
+
+    <h3 class="myclass">Class selectors are used to select elements by their class Name .</h3>
+
+    <p id="myid">ID selector are used to select unique elements by their id name    #</p>
+
+</body>
+</html>

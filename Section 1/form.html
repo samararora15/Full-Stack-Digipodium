@@ -1,60 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Admission Form</title>
 </head>
-<body>
 
-    <h1>Student Admission Form</h1>
+<body style="background-color: bisque;">
+
+    <h1>
+        <center>Student Admission Form</center>
+    </h1>
     <hr>
     <!-- hr places a horizontal line -->
 
     <form>
+        <fieldset>
+            <label>Full Name</label>
+            <input type="text" required minlength="4">
+            <br><br>
+            <!-- ctrl space shows type fields -->
+            <!-- required shows field is necessary and user cant submit unitl data is entered -->
+            <!-- minlength means minimum length should be there -->
 
-        <label>Full Name</label>
-        <input type="text">
-        <br><br>
-        <!-- ctrl space shows type fields -->
+            <label>Email Address</label>
+            <input type="email" required>
+            <br><br>
 
-        <label>Email Address</label>
-        <input type="email">
-        <br><br>
+            <label>Date of Birth</label>
+            <input type="date">
+            <br><br>
 
-        <label>Date of Birth</label>
-        <input type="date">
-        <br><br>
+            <label>Age</label>
+            <input type="number" min="16" max="99">
+            <br><br>
+            <!-- min and max sets the limit -->
 
-        <label>Address</label>
-        <textarea cols="30" rows="4"></textarea>
-        <br><br>
+            <label>Address</label>
+            <textarea cols="30" rows="4"></textarea>
+            <br><br>
 
-        <label>State/Province</label>
-        <select>
-            <option>Uttar Pradesh</option>
-            <option>New Delhi</option>
-            <option>Maharashtra</option>
-            <option>Goa</option>
-            <option>Kolkata</option>
-            <option>Punjab</option>
-        </select>
-        <br><br>
+            <label>State/Province</label>
+            <select>
+                <option>Uttar Pradesh</option>
+                <option>New Delhi</option>
+                <option>Maharashtra</option>
+                <option>Goa</option>
+                <option>Kolkata</option>
+                <option>Punjab</option>
+            </select>
+            <br><br>
 
-        <label>Select Intermediate Board</label>
-        <input type="text" list="board">
+            <label>Select Intermediate Board</label>
+            <input type="text" list="board">
 
-        <datalist id="board">
-            <option>CBSE</option>
-            <option>ISC</option>
-            <option>UP</option>
-        </datalist>
-        <br><br>
-        <!-- datalist is used to enter as well as choose -->
+            <datalist id="board">
+                <option>CBSE</option>
+                <option>ISC</option>
+                <option>UP</option>
+            </datalist>
+            <br><br>
+            <!-- datalist is used to enter as well as choose -->
 
-        <button>Submit</button>
+            <label>Gender</label>
+            <input type="radio" name="gender"> Male
+            <input type="radio" name="gender"> Female
+            <br><br>
 
+            <input type="checkbox"> I Accept Terms and Conditions
+            <br><br>
+
+            <details>
+                <summary>Terms and Conditions</summary>
+                <p>Lorem ipsum dolor sit amet <mark> consectetur adipisicing elit </mark>. Cumque aspernatur molestiae obcaecati
+                    excepturi officia corrupti, consequuntur voluptates, ut corporis exercitationem adipisci eum numquam
+                    magni. Placeat vitae officia similique aut deleniti?</p>
+            </details>
+            <br><br>
+
+            <button>Submit</button>
+        </fieldset>
     </form>
 
 </body>
+
 </html>

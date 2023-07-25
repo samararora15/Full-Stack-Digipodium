@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Movie Ticket</title>
+</head>
+<body style="background-color: bisque;">
+
+    <h1><center>BOOK MY SHOW</center></h1>
+    <hr>
+    <!-- hr places a horizontal line -->
+
+    <form>
+
+        <fieldset>
+        <label>Full Name</label>
+        <input type="text">
+        <br><br>
+        <!-- ctrl space shows type fields -->
+
+        <label>Email Address</label>
+        <input type="email">
+        <br><br>
+
+        <label>Movie</label>
+        <input type="text" list="board">
+
+        <datalist id="board">
+        <option>Barbie</option>
+        <option>Oppenheimer</option>
+        <option>Mission Impossible: Dead Reckoning 1</option>
+
+        </datalist>
+        <br><br>
+
+        <label>Date</label>
+        <input type="date">
+        <br><br>
+
+        <label>Time Slot</label>
+        <select>
+            <option>11:00 AM - 1:40 PM</option>
+            <option>4:30 PM - 6:50 PM</option>
+            <option>7:15 PM - 9:40 PM</option>
+        </select>
+        <br><br>
+
+        <label>Screening Type</label>
+        <select>
+            <option>IMAX</option>
+            <option>PVR</option>
+            <option>2D</option>
+        </select>
+        <br><br>
+
+        <label>Choose Theater</label>
+        <select>
+            <option>INOX: Megaplex Phoenix Palassio Mall</option>
+            <option>PVR: Phoenix United Mall</option>
+            <option>PVR: Superplex Lulu</option>
+            <option>PVR: Singapore Mall</option>
+            <option>PVR: Saharaganj Mall</option>
+        </select>
+        <br><br>
+
+        <label>Seat Type</label>
+        <select>
+            <option>Executive: ₹620</option>
+            <option>Club: ₹750</option>
+            <option>Royale: ₹800</option>
+        </select>
+        <br><br>
+
+        <label>Total Seats</label>
+        <input type="number">
+        <br><br>
+
+        <label>Payment Mode</label>
+        <select>
+            <option>UPI</option>
+            <option>PayTm</option>
+            <option>Amazon Gift Card</option>
+            <option>Bookmyshow Points</option>
+        </select>
+        <br><br>
+
+        <input type="checkbox">
+        <label>Check the box if Payment Successful</label>
+        <br><br>
+
+        <!-- datalist is used to enter as well as choose -->
+
+        <button>Confirm Tickets</button>
+        </fieldset>
+    </form>
+
+</body>
+</html>
