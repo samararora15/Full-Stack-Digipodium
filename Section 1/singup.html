@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+
+    <style>
+
+        body{
+            background-color: blueviolet;
+            margin: 0;
+
+            display: flex;  
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .mycard{
+            background-color: white;
+            border: 1.5px solid black;
+            width: 24%;
+            padding: 50px;
+            box-sizing: border-box;
+            border-radius: 10px;
+
+            /* x-offset y-offset blur size color */
+            box-shadow: 3px 3px 10px 4.5px rgba(0, 0, 0, 0.675);
+        }
+
+        .myinput{
+            background-color: rgba(137, 43, 226, 0.079);
+            border: 1px solid black;
+            width: 80%;
+            border-radius: 3px;
+        }
+
+        /* .mybtn{
+            color: black;
+            align-items: center;
+            border-radius: 6px;
+        } */
+
+    </style>
+
+</head>
+<body>
+
+    <div class="mycard">   
+        <!-- for layout or design div tag is used -->
+        <form>
+            <h3 class="form-title"><center>Sign Up</center></h3>
+            <hr>
+
+            <label for="">First Name<sup>*</sup></label>
+            <input class="myinput" type="text">
+            <br><br>
+
+            <label for="">Last Name</label>
+            <input class="myinput" type="text">
+            <br><br>
+
+            <label for="">Email Address<sup>*</sup></label>
+            <input class="myinput" type="email">
+            <br><br>
+
+            <label for="">Username<sup>*</sup></label>
+            <input class="myinput" type="text">
+            <!-- when apllying some restrictions in input size of field changes and how to put field in front of label -->
+            <br><br>
+
+            <label for="">Choose Region<sup>*</sup></label>
+            <input class="myinput" list="region">
+
+            <datalist id="region">
+                <option>Europe</option>
+                <option>Asia-Pacific</option>
+                <option>Korea</option>
+                <option>Brazil</option>
+                <option>Latin America</option>
+                <option>North America</option>
+            </datalist>
+            <br><br>
+
+            <label for="">Create Password<sup>*</sup></label>
+            <input class = "myinput" type="password">
+            <br><br>
+
+            <label for="">Confirm Password<sup>*</sup></label>
+            <input class="myinput" type="password">
+            <br><br><br>
+
+            <input type="checkbox">    I accept the Terms and Conditons <br><br><br>
+
+            <button class="mybtn">Create Account</button>
+
+
+        </form>
+    </div>
+
+</body>
+</html>
