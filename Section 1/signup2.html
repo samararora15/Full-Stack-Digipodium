@@ -5,24 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up</title>
 
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,regular,italic,700,700italic,900,900italic" rel="stylesheet" />
+
     <style>
 
         body{
-            background-color: blueviolet;
+            /* background-color: blueviolet; */
             margin: 0;
 
             display: flex;  
             /*  */
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            /* height: 100vh; */
+
+            /* background-image: linear-gradient(90deg, #A100FFFF 0%, #71C4FFFF 100%); */
+
+            /* background-image: url('https://wallpapers.com/images/hd/minimal-aesthetic-desktop-floral-plants-hsfbuf59dahed9hk.jpg'); */
+           
+            background-image: linear-gradient(0deg,rgba(236, 24, 24, 0.277),rgba(255, 255, 255, 0.485)), url('https://wallpapers.com/images/hd/minimal-aesthetic-desktop-floral-plants-hsfbuf59dahed9hk.jpg');
+           
+            background-size: cover;
+            /* google font to get free font press f1 type google font and select font */
         }
 
         .mycard{
             background-color: white;
             border: 1.5px solid black;
-            width: 24%;
-            padding: 50px;
+            width: 25%;
+            padding: 20px;
             box-sizing: border-box;
             border-radius: 10px;
 
@@ -33,15 +44,55 @@
         .myinput{
             background-color: rgba(137, 43, 226, 0.079);
             border: 1px solid black;
-            width: 80%;
+            width: 100%;
+            padding: 4px;
+            box-sizing: border-box;
             border-radius: 3px;
+            margin-bottom: 5px; 
+            /* margin bottom acts like br between elements */
         }
 
-        /* .mybtn{
-            color: black;
-            align-items: center;
-            border-radius: 6px;
-        } */
+        .mybtn{
+            background-color: blueviolet;
+            color: white;
+            padding: 6px;
+            border-radius: 3px;
+            width: 100%;
+            margin-top: 6px;
+            border: none;
+            /* text-align: center; */
+            transition-duration: 300ms;
+        }
+
+        .mybtn:hover{
+            background-color: rgb(23, 3, 42);
+            transform: translateY(-3px);
+        }
+
+        .mybtn:active{
+            outline: 3px solid blue;
+        }
+
+        .form-title{
+            font-family: Lato;
+            text-align: center;
+            font-size: 20px;
+            border-bottom: 1px solid black;
+            padding-bottom: 4px;
+            margin-bottom: 20px;
+        }
+
+        .logo{
+            width: 60px;
+            margin: auto;
+            display: block;
+        }
+
+        *{
+            font-family: Lato;
+        }
+
+        /* asterisk is called universal selector */
 
     </style>
 
@@ -49,10 +100,12 @@
 <body>
 
     <div class="mycard">   
+
+        <img class="logo" src="https://avatars.githubusercontent.com/u/26999847?s=280&v=4" alt="Sorry">
+
         <!-- for layout or design div tag is used -->
         <form>
-            <h3 class="form-title"><center>Sign Up</center></h3>
-            <hr>
+            <h3 class="form-title">Sign Up</h3>
 
             <label for="">First Name<sup>*</sup></label>
             <input class="myinput" type="text">
@@ -64,6 +117,7 @@
 
             <label for="">Email Address<sup>*</sup></label>
             <input class="myinput" type="email">
+            <!-- placeholder to display text inside box -->
             <br><br>
 
             <label for="">Username<sup>*</sup></label>
@@ -94,7 +148,7 @@
 
             <input type="checkbox">    I accept the Terms and Conditons <br><br><br>
 
-            <button class="mybtn">Create Account</button>
+            <button type="button" class="mybtn">Create Account</button>
 
 
         </form>
