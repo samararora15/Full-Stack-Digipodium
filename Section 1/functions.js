@@ -47,5 +47,3 @@ for(let i=100;i<=500;i++)
         console.log(i);
     }
 }
-
-//18 21 23 online 5 bje se
