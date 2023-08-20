@@ -4,23 +4,79 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  
+    <style>
+
+      .card{
+        transform-style: preserve-3d;
+        transform: perspective(1000px);
+      }
+
+      .card-body{
+        transform: translateZ(50px);
+      }
+
+      .my-img{
+        height: 400px;
+        object-fit: cover;
+      }
+
+    </style>
+  
   </head>
   <body>
 
-    <section>
+    <header class="bg-dark text-white">
 
-        <div class="row">
+      <div class="container py-5" style = "perspective:500">
 
-            <div class="col-md-3">
+        <h1 class="fw- bold display-4 text-center page-title">Best Camera Offers</h1>
+        <h3 class="text-center sub-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. At, numquam.</h3>
+
+        <div class="input-group mt-5 w-75 mx-auto my-input">
+
+          <!-- input group is used to add multiple items to input like icon without caring for alignment margin etc -->
+
+        <input type="text" class="form-control">
+        <button class="btn btn-primary"> <i class="fa-solid fa-magnifying-glass"></i> </button>
+
+        </div>
+
+        <!-- form-control for styling of input mx-auto for alignment along x axis -->
+
+      </div>
+
+    </header>
+
+    <section class="container">
+
+        <div class="row mt-5">
+
+            <div class="col-md-4 mb-4">
 
                 <div class="card">
-                    <img class="card-img-top" src="https://i1.adis.ws/i/canon/eos-r10-frt_range_9feaf965e90e48d3a164d106d9939020" alt="Camera">
+                    <img class="card-img-top my-img" src="https://d2ajlz7o3p8ddv.cloudfront.net/media/products/thumbnails/ZV-E1-thumb.jpg" alt="Camera">
                     <div class="card-body">
 
                         <p class="fw-bold h4 text-muted">Canon</p>
                         <h3>E06 R10</h3>
-                        <h2></h2>
+                        <p>
+                          <i class="fa-solid fa-star text-warning"></i>
+                          <i class="fa-solid fa-star text-warning"></i>
+                          <i class="fa-solid fa-star text-warning"></i>
+                          <i class="fa-solid fa-star text-warning"></i>
+                          <i class="fa-solid fa-star-half-stroke text-warning"></i> 4.5 Stars form 1000+ Reviews
+                        </p>
+                        <h2>₹4,999.0</h2>
+                    </div>
+
+                    <div class="card-footer">
+
+                      <button class="btn btn-primary"> <i class="fa-solid fa-cart-shopping"></i> Add to Cart </button>
+
+                      <button class="btn btn-outline-primary"> <i class="fa-solid fa-bolt"></i> Buy Now </button>
 
                     </div>
 
@@ -28,10 +84,163 @@
 
             </div>
 
+            <div class="col-md-4 mb-4">
+
+              <div class="card">
+                  <img class="card-img-top my-img" src="https://i1.adis.ws/i/canon/eos-r10-frt_range_9feaf965e90e48d3a164d106d9939020" alt="Camera">
+                  <div class="card-body">
+
+                      <p class="fw-bold h4 text-muted">Canon</p>
+                      <h3>E06 R10</h3>
+                      <p>
+                        <i class="fa-solid fa-star text-warning"></i>
+                        <i class="fa-solid fa-star text-warning"></i>
+                        <i class="fa-solid fa-star text-warning"></i>
+                        <i class="fa-solid fa-star text-warning"></i>
+                        <i class="fa-solid fa-star-half-stroke text-warning"></i> 4.5 Stars form 1000+ Reviews
+                      </p>
+                      <h2>₹4,999.0</h2>
+                  </div>
+
+                  <div class="card-footer">
+
+                    <button class="btn btn-primary"> <i class="fa-solid fa-cart-shopping"></i> Add to Cart </button>
+
+                    <button class="btn btn-outline-primary"> <i class="fa-solid fa-bolt"></i> Buy Now </button>
+
+                  </div>
+
+              </div>
+
+          </div>
+
+          <div class="col-md-4 mb-4">
+
+            <div class="card">
+                <img class="card-img-top my-img" src="https://i1.adis.ws/i/canon/eos-r10-frt_range_9feaf965e90e48d3a164d106d9939020" alt="Camera">
+                <div class="card-body">
+
+                    <p class="fw-bold h4 text-muted">Canon</p>
+                    <h3>E06 R10</h3>
+                    <p>
+                      <i class="fa-solid fa-star text-warning"></i>
+                      <i class="fa-solid fa-star text-warning"></i>
+                      <i class="fa-solid fa-star text-warning"></i>
+                      <i class="fa-solid fa-star text-warning"></i>
+                      <i class="fa-solid fa-star-half-stroke text-warning"></i> 4.5 Stars form 1000+ Reviews
+                    </p>
+                    <h2>₹4,999.0</h2>
+                </div>
+
+                <div class="card-footer">
+
+                  <button class="btn btn-primary"> <i class="fa-solid fa-cart-shopping"></i> Add to Cart </button>
+
+                  <button class="btn btn-outline-primary"> <i class="fa-solid fa-bolt"></i> Buy Now </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4 mb-4">
+
+          <div class="card">
+              <img class="card-img-top my-img" src="https://i1.adis.ws/i/canon/eos-r10-frt_range_9feaf965e90e48d3a164d106d9939020" alt="Camera">
+              <div class="card-body">
+
+                  <p class="fw-bold h4 text-muted">Canon</p>
+                  <h3>E06 R10</h3>
+                  <p>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star-half-stroke text-warning"></i> 4.5 Stars form 1000+ Reviews
+                  </p>
+                  <h2>₹4,999.0</h2>
+              </div>
+
+              <div class="card-footer">
+
+                <button class="btn btn-primary"> <i class="fa-solid fa-cart-shopping"></i> Add to Cart </button>
+
+                <button class="btn btn-outline-primary"> <i class="fa-solid fa-bolt"></i> Buy Now </button>
+
+              </div>
+
+          </div>
+
+      </div>
+
         </div>
 
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script>
+
+      ScrollReveal().reveal('.page-title',{
+        delay:300,
+        origin :"bottom",
+        distance: '30px',
+        duration: 1000,
+        rotate:{
+          x:-90,
+          y:0,
+          z:0,
+        },
+      })
+
+      ScrollReveal().reveal('.sub-title',{
+        delay:300,
+        origin :"bottom",
+        distance: '30px',
+        duration: 1000,
+        rotate:{
+          x:-90,
+          y:0,
+          z:0,
+        },
+      });
+
+      ScrollReveal().reveal('.my-input',{
+        delay:300,
+        origin :"right",
+        distance: '100px',
+        duration: 500,
+        // rotate:{
+        //   x:-90,
+        //   y:0,
+        //   z:0,
+        // },
+      });
+
+      ScrollReveal().reveal(".card",{
+        delay:300,
+        origin :"bottom",
+        distance: '50px',
+        duration: 500,
+        interval: 200,
+      });
+
+    </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js" integrity="sha512-RX/OFugt/bkgwRQg4B22KYE79dQhwaPp2IZaA/YyU3GMo/qY7GrXkiG6Dvvwnds6/DefCfwPTgCXnaC6nAgVYw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+
+      VanillaTilt.init(document.querySelectorAll('.card'),{
+        max: 10,
+        speed: 1000,
+        // glare: true,
+      });
+
+    </script>
+
   </body>
 </html>
