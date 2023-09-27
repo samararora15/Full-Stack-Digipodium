@@ -1,41 +1,74 @@
-import React from 'react'
+import React from "react";
+import {useFormik} from "formik";
+import * as Yup from 'yup';
+import Swal from "sweetalert2";
+import useAppContext from "../AppContext";
 
 const Login = () => {
+
+  const { setloggedin } = useAppContext();
+
+  // initialize formik
+
+  const loginForm = useFormik({
+    initialValues : {
+      email: '',
+      password: ''
+    },
+    onSubmit: async (values) => {
+      console.table(values);
+
+      const res = await fetch('http://localhost:5000/user/authenticate',{
+
+      method: 'POST',
+      body: JSON.stringify(values),
+      headers:{
+        'Content-Type' : 'application/json'
+      }
+      });
+
+      console.log(res.status);
+
+      if(res.status === 200){
+        Swal.fire({
+          icon : 'success',
+          title : 'Login Success'
+        })
+        setloggedin(true);
+      }else if(res.status === 400)
+      {
+        Swal.fire({
+          icon : 'error',
+          title : 'Login Failed',
+          text: 'Invalid email or password'
+        })
+      }
+
+    }
+  });
+
   return (
-      <div className = 'mainsection'>
-        <img className='mylogo' src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_Green.png" alt="Spotify" />
-        <div className='mycard'>
-          <div className='infotype'>
-            <button className='mybtn'>SIGN IN</button>
-            <button className='mybtn'>SIGN UP</button>
+    <div className="vh-100 bg-body-secondary">
+      <div className="col-md-3 mx-auto pt-5">
+        <div className="card mt-5">
+          <div className="card-body">
+            <h3 className="text-center my-5">Login Account</h3>
+
+            <form onSubmit={loginForm.handleSubmit}>
+
+              <label>Email</label>
+              <input id="email" onChange={loginForm.handleChange} value={loginForm.values.email} type="text" className="form-control mb-4" />
+
+              <label>Password</label>
+              <input id="password" onChange={loginForm.handleChange} value={loginForm.values.password} type="password" className="form-control mb-4" />
+
+              <button type="submit" className="btn btn-primary w-100">Submit</button>
+            </form>
           </div>
-          <hr />
-          <div className='entry'>
-            <div className='entryfields'>
-            <h1 className='fieldname'>Email or Username</h1>
-            <input className='ipbox' type="text" placeholder='Email or Username' />
-            <h1 className='fieldname'>Password</h1>
-            <input className='ipbox' type="password" placeholder='Password' />
-            </div>
-          </div>
-          <div className='switchboxcontent'>  
-          <div className='switchbox'> 
-          <label class="switch">
-          <input type="checkbox"/>
-          <span class="slider round"></span>
-          </label>
-          </div>
-          <div className='switchboxtext'>
-          <h1>Remember Me <br /></h1>
-          </div>
-          </div>
-          <div className='loginbtnsection'>
-            <button className='loginbtn'>Log In</button>
-          </div>
-          <h1 id='lasthead'>Forgot your Password?</h1>
         </div>
       </div>
-  )
-}
+    </div>
+  );
+};
 
-export default Login
+export default Login;

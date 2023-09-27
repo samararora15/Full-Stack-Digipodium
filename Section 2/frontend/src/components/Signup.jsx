@@ -1,41 +1,93 @@
-import React from 'react'
+import React from "react";
+import {useFormik} from "formik";
+import * as Yup from 'yup';
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
+
+const SignupSchema = Yup.object().shape({
+  name: Yup.string()
+    .min(2, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('Required'),
+  email: Yup.string().email('Invalid email').required('Required'),
+});
+
 
 const Signup = () => {
+
+  const navigate = useNavigate();
+
+  // initialize formik
+
+  const signupForm = useFormik({
+    initialValues : {
+      name : '',
+      email: '',
+      password: '',
+      confirm: ''
+    },
+    onSubmit: async (values) => {
+      console.table(values);
+
+      const res = await fetch('http://localhost:5000/user/add', {
+        method: 'POST',
+        body: JSON.stringify(values),
+        headers: {
+          'Content-Type' : 'application/json'
+        }
+      });
+      console.log(res.status);
+
+      if(res.status === 200){
+        Swal.fire({
+          icon : 'success',
+          title : 'Signup Success',
+          text : 'Now Login to Continue'
+        })
+
+        navigate('/login');
+
+      }else{
+        Swal.fire({
+          icon : 'error',
+          title : 'something went wrong',
+          text : 'try again'
+        })
+      }
+
+    },
+    validationSchema : SignupSchema
+  });
+
   return (
-    <div className = 'mainsection'>
-        <img className='mylogo' src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_Green.png" alt="Spotify" />
-        <div className='mycard'>
-          <div className='infotype'>
-            <button className='mybtn'>SIGN IN</button>
-            <button className='mybtn'>SIGN UP</button>
+    <div className="vh-100 bg-body-secondary">
+      <div className="col-md-3 mx-auto pt-5">
+        <div className="card">
+          <div className="card-body">
+            <h3 className="text-center my-5">Create Account</h3>
+
+            <form onSubmit={signupForm.handleSubmit}>
+              <label>Name</label>
+
+              <span style={{color : "red", fontSize:10, marginLeft: 10}}>{signupForm.errors.name}</span>
+              <input id="name" onChange={signupForm.handleChange} value={signupForm.values.name} type="text" className="form-control mb-4" />
+
+              <label>Email</label>
+              <input id="email" onChange={signupForm.handleChange} value={signupForm.values.email} type="text" className="form-control mb-4" />
+
+              <label>Password</label>
+              <input id="password" onChange={signupForm.handleChange} value={signupForm.values.password} type="password" className="form-control mb-4" />
+              
+              <label>Confirm Password</label>
+              <input id="confirm" onChange={signupForm.handleChange} value={signupForm.values.confirm} type="password" className="form-control mb-4" />
+
+              <button type="submit" className="btn btn-primary w-100">Submit</button>
+            </form>
           </div>
-          <hr />
-          <div className='entry'>
-            <div className='entryfields'>
-            <h1 className='fieldname'>Email or Username</h1>
-            <input className='ipbox' type="text" placeholder='Email or Username' />
-            <h1 className='fieldname'>Password</h1>
-            <input className='ipbox' type="password" placeholder='Password' />
-            </div>
-          </div>
-          <div className='switchboxcontent'>  
-          <div className='switchbox'> 
-          <label class="switch">
-          <input type="checkbox"/>
-          <span class="slider round"></span>
-          </label>
-          </div>
-          <div className='switchboxtext'>
-          <h1>Remember Me <br /></h1>
-          </div>
-          </div>
-          <div className='loginbtnsection'>
-            <button className='loginbtn'>Log In</button>
-          </div>
-          <h1 id='lasthead'>Forgot your Password?</h1>
         </div>
       </div>
-  )
-}
+    </div>
+  );
+};
 
-export default Signup
+export default Signup;

@@ -1,7 +1,20 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import useAppContext from '../AppContext'
 
 const Navbar = () => {
+
+  const {loggedin} = useAppContext();
+
+  const showOption = () => {
+    if(loggedin){
+      return( <li className='nav-item'>
+        <button className='btn btn-danger'>Logout</button>
+      </li>
+      )
+    }
+  }
+
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
   <div className="container-fluid">
@@ -36,6 +49,26 @@ const Navbar = () => {
             Signup
           </NavLink>
         </li>
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/todo">
+            ToDo
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/state">
+            State
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/productlist">
+            ProductList
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/manageuser">
+            ManageUser
+          </NavLink>
+        </li>
         <li className="nav-item dropdown">
           <a
             className="nav-link dropdown-toggle"
@@ -67,11 +100,7 @@ const Navbar = () => {
             </li>
           </ul>
         </li>
-        <li className="nav-item">
-          <a className="nav-link disabled" aria-disabled="true">
-            Disabled
-          </a>
-        </li>
+        {showOption()}
       </ul>
       <form className="d-flex" role="search">
         <input
